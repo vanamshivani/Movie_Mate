@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <style>
+        /* Fullscreen Video Background */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+           background: rgba(0, 0, 0, 0.6) url('C:/Users/91777/OneDrive/Desktop/movieticket/img/image.jpg');
+           background-blend-mode: darken;
+     
+    }
+        
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensure video stays in the background */
+            background-image: url('image.jpg');
+        }
+
+        .container {
+            background: rgba(62, 43, 116, 0.8); /* Semi-transparent background */
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 350px;
+            width: 100%;
+            color: white;
+            padding: 20px;
+            z-index: 1; /* Ensure the form is above the video */
+            background-image: url('image.jpg');
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: #2b214a;
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background: #4e3c8a;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-container input::placeholder {
+            color: #b3a7d8;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: #6a50b8;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #563499;
+        }
+
+        .toggle {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .toggle a {
+            color: #a080ff;
+            text-decoration: none;
+        }
+
+        .toggle a:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .social-login button {
+            width: 48%;
+            padding: 10px;
+            background: #4e3c8a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .social-login button:hover {
+            background: #563499;
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 1.5rem;
+            }
+
+            .form-container button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <!-- Login/Signup Form -->
+    <div class="container">
+        <div class="header" id="formHeader">Login</div>
+        <div class="form-container" id="formContainer">
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+               <!-- <button type="submit">Log In</button> -->
+                <button id="login" type="submit" onclick="location.href='index.html'">Log In</button>
+                
+                <div class="social-login">
+                    <button>Log in with Facebook</button>
+                    <button>Log in with Google</button>
+                </div>
+                <div class="toggle">
+                    Don't have an account? <a href="#" id="showSignup">Sign Up</a>
+                </div>
+            </form>
+            <form id="signupForm" style="display: none;">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+                <div class="social-login">
+                    <button>Sign up with Facebook</button>
+                    <button>Sign up with Google</button>
+                </div>
+                <div class="toggle">
+                    Already have an account? <a href="#" id="showLogin">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const formHeader = document.getElementById('formHeader');
+        const showSignup = document.getElementById('showSignup');
+        const showLogin = document.getElementById('showLogin');
+
+        showSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+            formHeader.textContent = 'Sign Up';
+        });
+
+        showLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+            formHeader.textContent = 'Login';
+        });
+    </script>
+</body>
+</html>

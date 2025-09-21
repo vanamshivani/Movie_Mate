@@ -1,0 +1,230 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+        background-image: url('image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      
+      }
+  
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-container,
+  .date-selection,
+  .time-selection {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  
+  select, input[type="date"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 250px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  select:focus, input[type="date"]:focus {
+    border-color: #6fe3b1;
+    outline: none;
+  }
+  
+  /* Showcase section */
+  .showcase {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  
+  .showcase div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .showcase .seat {
+    background-color: #bbb;
+  }
+  
+  .showcase .selected {
+    background-color: #6fe3b1;
+  }
+  
+  .showcase .sold {
+    background-color: #d9534f;
+  }
+  
+  /* Screen Styles */
+  .screen {
+    width: 100%;
+    height: 40px;
+    background-color: #444;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .seat {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .seat:hover {
+    background-color: #aaa;
+  }
+  
+  .seat.selected {
+    background-color: #6fe3b1;
+  }
+  
+  .seat.sold {
+    background-color: #d9534f;
+    cursor: not-allowed;
+  }
+  
+  /* Text and Buttons */
+  .text {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .text span {
+    color: #6fe3b1;
+  }
+  
+  .confirmation {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #6fe3b1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #5ac595;
+  }
+  
+  button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Booked Seats Display */
+  #bookedSeatsDisplay {
+    margin-top: 30px;
+    font-size: 1.1em;
+    text-align: center;
+  }
+  
+  #bookedSeatsList {
+    font-weight: bold;
+    color: #6fe3b1;
+  }
+  
+  #bookedSeatsList.no-seats {
+    color: #999;
+    font-style: italic;
+  }
+  
+  /* Thank You Message */
+  #thanksMessage {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  #thanksMessage p {
+    font-size: 1em;
+    color: #333;
+  }
+  
+  #thanksMessage span {
+    color: #6fe3b1;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .seat {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .movie-container select,
+    .time-selection select,
+    .date-selection input {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .seat {
+      width: 25px;
+      height: 25px;
+    }
+  
+    .text {
+      font-size: 1.1em;
+    }
+  }
+  
+  
